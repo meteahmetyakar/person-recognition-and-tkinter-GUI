@@ -1,0 +1,2 @@
+open terminal at the location of the file where the source file is located
+pip install cmake face_recognition numpy opencv-python
