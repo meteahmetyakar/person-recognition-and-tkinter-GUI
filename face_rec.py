@@ -85,16 +85,18 @@ def train_person():
     surnameText = str(soyisim.get(1.0,"end-1c"))
     gmailText = str(gmail.get(1.0,"end-1c"))
 
-    db = sql.connect('persons')
+    db = sql.connect('persons.db')
     cursor = db.cursor()
 
     if len(cursor.execute("SELECT * FROM persons WHERE name = ? AND surname = ?", (nameText,surnameText)).fetchall()) == 0:
         cursor.execute("CREATE TABLE IF NOT EXISTS persons (name, surname, mail)")
-        cursor.execute("INSERT INTO kisiler VALUES(?,?,?)", (nameText,surnameText,gmailText))
+        cursor.execute("INSERT INTO persons VALUES(?,?,?)", (nameText,surnameText,gmailText))
 
     fileName = str(nameText+"_"+surnameText+"_"+str(datetime.datetime.now().today()).replace(" ", "").replace("-", "").replace(":","").replace(".", "")+".jpg")
 
-    shutil.copy('test.jpg', 'D:\Mete\Software\projects\my projects\face_rec/faces/'+str(fileName))
+
+    startupPath = os.getcwd()
+    shutil.copy('test.jpg', startupPath+'/faces/'+str(fileName))
 
     db.commit()
     db.close()
@@ -102,7 +104,7 @@ def train_person():
 
 def print_person_data(name, surname):
     ### printing given person datas to labels
-    db = sql.connect('persons')
+    db = sql.connect('persons.db')
     cursor = db.cursor()
 
     cursor.execute("SELECT * FROM persons WHERE name = ? AND surname = ?", (name, surname))
@@ -147,7 +149,7 @@ b.pack()
 ### GUI initializing end
 
 while isContinue: #continue until taking a photo
-    img = cap.read()[0]
+    img = cap.read()[1]
     img1 = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = ImageTk.PhotoImage(Image.fromarray(img1))
     L1["image"] = img
