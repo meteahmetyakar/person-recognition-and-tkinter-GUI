@@ -16,4 +16,4 @@ pip install tk
 sudo apt-get install python3-pil python3-pil.imagetk
 ```
 ## 
-### :incoming_envelope: If you encounter any problems while installing or testing the project, please feel free to contact me.
+### :mechanical_arm: If you encounter any problems while installing or testing the project, please feel free to contact me.
