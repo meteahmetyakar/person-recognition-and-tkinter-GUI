@@ -1,4 +1,0 @@
-open terminal at the location of the file where the source file is located (for ubuntu)
-pip install cmake
-pip install cmake face_recognition numpy opencv-python
-sudo apt-get install python3-pil python3-pil.imagetk
