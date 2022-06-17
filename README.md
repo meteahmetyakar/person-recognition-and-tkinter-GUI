@@ -5,7 +5,6 @@
 ## 
 <p align="center">
   <img src="https://github.com/meteahmetyakar/person-recognition-and-tkinter-GUI/blob/main/example.gif" width="1280" height="720" /> 
-</p>
-## 
+</p> ##
 
 If you encounter any problems while installing or testing the project, please feel free to contact me.
