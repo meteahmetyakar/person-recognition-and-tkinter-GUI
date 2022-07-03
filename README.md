@@ -7,7 +7,7 @@
   <img src="https://github.com/meteahmetyakar/person-recognition-and-tkinter-GUI/blob/main/images/example.gif" width="640" height="360" /> 
 </p> 
 
-## Libraries required for the program
+## Libraries required for the software
 ```
 pip install cmake
 pip install face_recognition numpy opencv-python
